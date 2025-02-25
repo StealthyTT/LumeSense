@@ -4,53 +4,38 @@ substitutions:
 
 esphome:
   name: "${name}"
-  # Friendly names are used where appropriate in Home Assistant
   friendly_name: "${friendly_name}"
-  # Automatically add the mac address to the name
-  # so you can use a single firmware for all devices
   name_add_mac_suffix: true
 
-  # This will allow for (future) project identification,
-  # configuration and updates.
   project:
     name: esphome.project-template
     version: "1.0"
 
-# This should point to the public location of this yaml file.
 dashboard_import:
-  package_import_url: github://StealthyTT/LumeSense/LumeSense.yaml
-  import_full_config: false # or true
+  package_import_url: https://raw.githubusercontent.com/StealthyTT/LumeSense/main/LumeSense.yaml
+  import_full_config: false
 
 wifi:
-  # Set up a wifi access point
   ap:
     password: "12345678"
-
-# In combination with the `ap` this allows the user
-# to provision wifi credentials to the device.
 
 esp32_improv:
   authorizer: none
 
-# Sets up the improv via serial client for Wi-Fi provisioning
 improv_serial:
 
 esp32:
   board: esp32-s3-devkitc-1
   framework:
-    type: esp-idf #arduino
+    type: esp-idf
     version: 4.4.8
     platform_version: 5.4.0
 
-# Enable logging
-logger: 
+logger:
 
-# Enable Home Assistant API
 api:
 
-# Allow Over-The-Air updates
 ota:
-- platform: esphome
 
 captive_portal:
 
@@ -131,7 +116,6 @@ select:
     baud_rate:
       name: Baud Rate
 
-
 light:
   - platform: esp32_rmt_led_strip
     rgb_order: GRB
@@ -143,7 +127,6 @@ light:
     name: none
 
 sensor:
-
   - platform: bh1750
     name: Light Lux
     address: 0x23
@@ -153,12 +136,10 @@ sensor:
       name: temperature
       filters:
         - calibrate_linear:
-           method: least_squares
-           datapoints:
-            # Map 0.0 (from sensor) to 1.0 (true value)
-            - 85.3 -> 72.5
-            - 83.3 -> 70.5
-     #   - offset: -8
+            method: least_squares
+            datapoints:
+              - 85.3 -> 72.5
+              - 83.3 -> 70.5
     humidity:
       name: humidity
     address: 0x44
@@ -257,4 +238,3 @@ text_sensor:
       name: MAC
 
 bluetooth_proxy:
-
