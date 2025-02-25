@@ -12,7 +12,7 @@ esphome:
     version: "1.0"
 
 dashboard_import:
-  package_import_url: github://StealthyTT/LumeSense/LumeSense.yaml
+  package_import_url: github://StealthyTT/LumeSense/LumeSense.yaml@main
   import_full_config: false
 
 wifi:
