@@ -17,8 +17,8 @@ esphome:
     version: "1.0"
 
 # This should point to the public location of this yaml file.
-#dashboard_import:
-  package_import_url: github://StealthyTT/LumeSense
+dashboard_import:
+  package_import_url: github://StealthyTT/LumeSense/LumeSense.yaml
   import_full_config: false # or true
 
 wifi:
