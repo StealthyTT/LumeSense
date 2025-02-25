@@ -146,8 +146,6 @@ sensor:
     address: 0x44
     update_interval: 120s
   - platform: ld2410
-    light:
-      name: Light
     moving_distance:
       name: Moving Distance
     still_distance:
