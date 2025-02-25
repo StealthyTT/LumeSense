@@ -12,8 +12,8 @@ esphome:
     version: "1.0"
 
 dashboard_import:
-  package_import_url: github://StealthyTT/LumeSense/LumeSense.yaml@main
-  import_full_config: true
+  package_import_url: github://stealthytt/lumeSense/lumesense.yaml@main
+  import_full_config: false
 
 wifi:
   ap:
@@ -36,7 +36,7 @@ logger:
 api:
 
 ota:
- - platform: esphome
+  - platform: esphome
 
 captive_portal:
 
@@ -146,6 +146,8 @@ sensor:
     address: 0x44
     update_interval: 120s
   - platform: ld2410
+    light:
+      name: Light
     moving_distance:
       name: Moving Distance
     still_distance:
