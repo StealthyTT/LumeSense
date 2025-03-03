@@ -135,12 +135,12 @@ sensor:
   - platform: sht3xd
     temperature:
       name: temperature
-      filters:
-        - calibrate_linear:
-            method: least_squares
-            datapoints:
-              - 85.3 -> 72.5
-              - 83.3 -> 70.5
+     # filters:
+       # - calibrate_linear:
+        #    method: least_squares
+        #    datapoints:
+              #- 85.3 -> 72.5
+             # - 83.3 -> 70.5
     humidity:
       name: humidity
     address: 0x44
