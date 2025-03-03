@@ -28,8 +28,6 @@ esp32:
   board: esp32-s3-devkitc-1
   framework:
     type: esp-idf
-    version: 4.4.8
-    platform_version: 5.4.0
 
 logger:
 
@@ -121,8 +119,8 @@ light:
   - platform: esp32_rmt_led_strip
     rgb_order: GRB
     pin: GPIO1
-    num_leds: 15
-    rmt_channel: 0
+    num_leds: 10
+    rmt_symbols: 96
     chipset: ws2812
     is_rgbw: true
     name: none
@@ -144,7 +142,7 @@ sensor:
     humidity:
       name: humidity
     address: 0x44
-    update_interval: 120s
+    update_interval: 160s
   - platform: ld2410
     light:
       name: Light
